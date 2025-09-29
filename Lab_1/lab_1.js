@@ -16,9 +16,9 @@ arr3 = [
     {name: 'Bill', age: 19},
     {name: 'Mike', age: 27},
     {name: 'Lue', age:12}];
-const findAge = arr3.filter(person => person.age === 12);
-const printPerson = findAge.map(person => `${person.name} ${person.age}`).join(', ');
-console.log(printPerson);
+const findAge = arr => arr.filter(person => person.age === 12);
+const printPerson = arr => findAge(arr).map(person => `${person.name} ${person.age}`).join(', ');
+console.log(printPerson(arr3));
 
 //1_4. Функция, которая принимает массив чисел и возвращает их сумму.
 arr4 = [10, 20, 10, 30];
@@ -29,8 +29,8 @@ console.log(sumArr(arr4));
 arr5 = ['яблоко', 'карта', 'плакат', 'кипяток', 'смерть']
 const reverseWord = (word) => word.split('').reverse().join('');
 
-const reverseArray = arr5.map(word => reverseWord(word)).reverse();
-console.log(reverseArray);
+const reverseArray = arr => arr.map(word => reverseWord(word)).reverse();
+console.log(reverseArray(arr5));
 
 //3_1. Нахождение суммы квадратов всех чётных чисел в заданном массиве.
 arr6 = [2, 4, 6, 7, 19, 93];
@@ -40,5 +40,5 @@ console.log(sumDoubledEven(arr6));
 //3_2. Нахождение среднего арифметического всех чисел, больших заданного значения, в заданном массиве объектов.
 arr7 = [44, 18, 55, 3, 6, 90, 43, 1, 150, 380];
 const moreThan50 = arr => arr.filter(n => n > 50);
-const averageNum = sumArr(moreThan50(arr7))/moreThan50(arr7).length;
-console.log(averageNum);
+const averageNum = arr => sumArr(moreThan50(arr))/moreThan50(arr).length;
+console.log(averageNum(arr7));
