@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="RU">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Список задач</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300..700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="todo">
+            <div class="todo-workspace">
+                <div class="todo-workspace-menu">
+                    <h class="title">Список задач</h>
+                    <div class="todo-workspace-menu-tools">
+                        <button class="add-button"><img src="assets/icons/add.svg" alt="+"/></button>
+                        <select class="filter-tasks">
+                            <option value="all">все задачи</option>
+                            <option value="active">невыполненные</option>
+                            <option value="completed">выполненные</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="todo-workspace-tasklist">
+                    <div class="task-container">
+                        <div class="check-button"></div>
+                        <div class="task-text">Lgnoejn rvwKHBRIGJb</div>
+                        <div class="todo-workspace-tasklist-tools">
+                            <button class="edit-button"><img src="assets/icons/edit.svg" alt="edit icon"/></button>
+                            <button class="delete-button"><img src="assets/icons/remove.svg" alt="remove icon"/></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
