@@ -1,0 +1,288 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    color: rgb(92, 255, 133);
+    font-family: 'Consolas', monospace;
+    overflow-x: hidden;
+    cursor: url('assets/white-rabbit32.png')16 16, auto;
+}
+
+.screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: opacity 1s ease-in-out;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.matrix-bg {
+    position: absolute;
+    width: 80%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+.title {
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(255,255,255,0.7);
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 5px rgba(255,255,255,0.5); }
+    to { text-shadow: 0 0 20px rgba(255,255,255,0.9); }
+}
+
+.morpheus-bg {
+    position: absolute;
+    width: 40%;
+    object-fit: cover;
+    z-index: -1;
+    opacity: 1;
+}
+
+/*Кнопки выбора калькулятора*/
+.buttons-container {
+    display: flex;
+    gap: 270px;
+    margin-top: 200px;
+}
+
+.pill-button {
+    padding: 10px 10px; 
+    width: 110px;
+    height: 50px;
+    border: none;
+    border-radius: 100px; 
+    font-family: 'Consolas', monospace;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    cursor: url('assets/white-rabbit32_1.png') 16 16, auto;
+    transition: all 0.3s ease;
+    outline: none;
+    position: relative;
+    background: transparent; 
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .pill-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .red {
+    background: linear-gradient(135deg, #000000, #ff00008f, #000000);
+    background-size: 300% 300%;
+    animation: gradientShift 10s ease infinite;
+    color: white;
+  }
+  
+  .blue {
+    background: linear-gradient(135deg, #000000, #0066ffa4, #000000);
+    background-size: 300% 300%;
+    animation: gradientShift 10s ease infinite reverse;
+    color: white;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+/*Общие стили для калькулятора*/
+.calculator {
+    background: rgba(0, 0, 0, 0.8);
+    border: 2px solid rgb(92, 255, 133);
+    border-radius: 10px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 0 20px rgba(0, 255, 140, 0.3);
+}
+
+.display {
+    background: #000;
+    color: rgb(92, 255, 133);
+    font-size: 2rem;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(92, 255, 133);
+    border-radius: 5px;
+    height: 60px;
+    overflow: hidden;
+    word-break: break-all;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
+
+.button {
+    padding: 15px;
+    font-family: 'Consolas', monospace;
+    font-size: 1.2rem;
+    border: 1px solid rgb(92, 255, 133);
+    background: #000;
+    color: rgb(92, 255, 133);
+    cursor: url('assets/white-rabbit32_1.png')16 16, auto;
+    transition: background 0.2s, color 0.2s;
+}
+
+.button:hover {
+    background: rgb(92, 255, 133);
+    color: #000;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: #000;
+    padding: 20px;
+    border: 2px solid rgb(92, 255, 133);
+    text-align: center;
+    border-radius: 10px;
+    max-width: 400px;
+}
+
+.error-gif {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+.error-text {
+    color: #f2f2f2;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.ok-button {
+    padding: 10px 20px;
+    background: rgb(92, 255, 133);
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: url('assets/white-rabbit32_1.png')16 16, auto;
+    font-family: 'Consolas', monospace;
+    font-size: 1rem;
+}
+
+.ok-button:hover {
+    background: rgb(92, 255, 133);
+}
+
+/* Кнопка Назад/передумал */
+.back-button {
+    width: 50px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: rgba(46, 194, 46, 0.279);
+    border: none;
+    color: rgb(151, 255, 151);
+    font-family: 'Consolas', monospace;
+    font-size: 1.8rem;
+    cursor: url('assets/white-rabbit32_1.png')16 16, auto;
+    padding: 8px;
+    border-radius: 4px;
+    transition: color 0.2s, background 0.2s;
+    z-index: 10;
+  }
+  
+  .back-button:hover {
+    color: white;
+    background: rgba(46, 194, 46, 0.448);
+  }
+  
+/*Калькуляторы*/
+  .full-calculator-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;  
+    background-image: url('assets/russia-ac.gif');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat; 
+    opacity: 0.7;
+  }
+  .basic-calculator-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    overflow: hidden;  
+    background-image: url('assets/nature.gif');
+    background-size:contain;
+    background-position: center;
+    background-repeat: no-repeat; 
+    opacity: 0.8;
+  }
+
+/*Вступление*/
+  .intro-text-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+    text-align: left; 
+    margin: 0 auto; 
+}
+
+.intro-text {
+    font-size: 24px;
+    color: rgb(43, 255, 117);
+    line-height: 1.5;
+    opacity: 0;
+    transition: all 0.5s ease;
+    margin: 0; 
+}
+
+.intro-text.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+

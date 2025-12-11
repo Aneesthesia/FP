@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EnterTheMatrix_calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Экран загрузки -->
+    <div id="intro-screen" class="screen">
+        <div id="intro-text-container" class="intro-text-container"></div>
+        </div>
+    </div>
+
+    <!-- Экран кода Матрицы -->
+    <div id="matrix-screen" class="screen hidden">
+        <img src="assets/matrix-code.gif" alt="Matrix Code" class="matrix-bg">
+        <h1 id="calculator-title" class="title">Калькулятор</h1>
+    </div>
+
+    <!-- Экран выбора таблетки -->
+    <div id="choice-screen" class="screen hidden">
+        <img src="assets/morpheus-pills.jpg" alt="Morpheus" class="morpheus-bg">
+        <img src="assets/matrix-code.gif" alt="Matrix Code" class="matrix-bg">
+        <div class="buttons-container">
+            <button id="red-pill" class="pill-button red">Реальность</button>
+            <button id="blue-pill" class="pill-button blue">Иллюзия</button>
+        </div>
+    </div>
+
+    <!-- Калькуляторы -->
+    <div id="full-calculator" class="full-calculator-screen hidden">
+        <button class="back-button" title="передумал?">←</button>
+        <div class="calculator">
+            <div class="display" id="display">0</div>
+            <div class="buttons">
+                <!-- Кнопки будут генерироваться -->
+            </div>
+        </div>
+    </div>
+
+    <div id="basic-calculator" class="basic-calculator-screen hidden">
+        <button class="back-button" title="передумал?">←</button>
+        <div class="calculator">
+            <div class="display" id="basic-display">0</div>
+            <div class="buttons">
+                <!-- Кнопки будут генерироваться -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Окно ошибки -->
+    <div id="error-modal" class="modal hidden">
+        <div class="modal-content">
+            <img src="assets/error.gif" alt="Error GIF" class="error-gif">
+            <p id="error-message" class="error-text">На 0 делить нельзя</p>
+            <button id="ok-button" class="ok-button">OK</button>
+        </div>
+    </div>
+    
+    <script src="dist/types.js" type="module"></script>
+    <script src="dist/utils.js" type="module"></script>
+    <script src="dist/main.js" type="module"></script>
+</body>
+</html>
