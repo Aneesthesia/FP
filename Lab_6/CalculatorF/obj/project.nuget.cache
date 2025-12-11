@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "nZCxQWwf1jl880NybcwV4BHH+ulXPomp70ruFc5mL+6V/TN54UKJgq4LGqkJO0ApnxdaRM0n9LFP9Jgr/yZkFQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\N-book\\ПАПКА_ДЛЯ_ВСЕГО\\ПОЛИТЕХ\\3_курс\\5_семестр\\Функциональное_программирование\\Lab_6\\CalculatorF\\CalculatorF.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\N-book\\.nuget\\packages\\fsharp.core\\8.0.101\\fsharp.core.8.0.101.nupkg.sha512"
+  ],
+  "logs": []
+}
